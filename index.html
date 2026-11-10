@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Spicky | Victor Wycliffe, Bartender</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;800&family=DM+Sans:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#2a0d12; --surface:#3a131a; --ink:#f6ece0; --muted:#c9aaa0; --accent:#ffb627; --heat:#e8452c; --line:#5a2630;
+  --display:'Bricolage Grotesque','Arial Black',Impact,sans-serif; --body:'DM Sans',system-ui,-apple-system,Segoe UI,sans-serif;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:light){
+  :root:not([data-theme="dark"]){--bg:#fff4e8;--surface:#ffe6cc;--ink:#3a0f14;--muted:#7a4a45;--accent:#b8420f;--heat:#c42b16;--line:#e8c4a4}
+}
+:root[data-theme="dark"]{--bg:#2a0d12;--surface:#3a131a;--ink:#f6ece0;--muted:#c9aaa0;--accent:#ffb627;--heat:#e8452c;--line:#5a2630}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.05rem/1.6 var(--body)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:960px;margin:0 auto;padding:0 1.25rem}
+nav{display:flex;justify-content:space-between;align-items:center;padding:1.25rem 0;font-weight:500}
+nav a{text-decoration:none;margin-left:1.25rem;color:var(--muted)}
+nav a:hover{color:var(--ink)}
+.logo{font-family:var(--display);font-weight:800;font-size:1.2rem;margin:0;color:var(--ink)}
+.hero{padding:3rem 0 4rem}
+.hero h1{font-family:var(--display);font-weight:800;font-size:clamp(4.5rem,24vw,13rem);line-height:.85;margin:0;letter-spacing:-.04em;color:var(--heat)}
+.hero p.tag{font-family:var(--display);font-weight:500;font-size:clamp(1.3rem,4vw,2rem);margin:1.5rem 0 .5rem;max-width:22ch;line-height:1.2}
+.hero p.sub{color:var(--muted);max-width:46ch;margin:0 0 2rem}
+.btn{display:inline-block;background:var(--accent);color:#2a0d12;font-weight:500;padding:.9rem 1.6rem;border-radius:999px;text-decoration:none;border:0;font:500 1rem var(--body);cursor:pointer}
+.btn:hover{filter:brightness(1.08)}
+.btn.ghost{background:none;color:var(--ink);border:2px solid var(--line);margin-left:.5rem}
+section{padding:3.5rem 0;border-top:1px solid var(--line)}
+h2{font-family:var(--display);font-weight:800;font-size:clamp(1.8rem,5vw,2.8rem);line-height:1.05;margin:0 0 1rem;letter-spacing:-.02em}
+.lead{color:var(--muted);max-width:52ch;margin:0 0 2rem}
+.heat{background:var(--surface);border-radius:20px;padding:1.5rem}
+.levels{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.5rem}
+.levels button{flex:1 1 7rem;padding:.8rem 1rem;border-radius:12px;border:2px solid var(--line);background:none;color:var(--ink);font:500 1rem var(--body);cursor:pointer}
+.levels button[aria-pressed="true"]{background:var(--heat);border-color:var(--heat);color:#fff}
+#drink h3{font-family:var(--display);font-size:1.8rem;margin:0 0 .4rem}
+#drink p{margin:.25rem 0;color:var(--muted)}
+#drink .flame{color:var(--accent);font-weight:500}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));gap:1.5rem}
+.grid h3{font-family:var(--display);font-size:1.25rem;margin:0 0 .3rem;color:var(--accent)}
+.grid p{margin:0;color:var(--muted)}
+form{display:grid;gap:1rem;max-width:34rem}
+label{display:grid;gap:.35rem;font-weight:500}
+input,select,textarea{font:400 1rem var(--body);padding:.8rem;border-radius:10px;border:2px solid var(--line);background:var(--surface);color:var(--ink)}
+footer{padding:2rem 0 3rem;color:var(--muted);border-top:1px solid var(--line);font-size:.95rem}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav>
+    <p class="logo">Spicky</p>
+    <div><a href="#heat">Pick your heat</a><a href="#hire">Book me</a><a href="#contact">Contact</a></div>
+  </nav>
+
+  <header class="hero">
+    <h1>Spicky</h1>
+    <p class="tag">Victor Wycliffe, bartender.</p>
+    <p class="sub">Cocktails with a kick, a friendly pour, and a bar that keeps your guests talking. Available for private events, weddings, corporate nights and guest shifts.</p>
+    <a class="btn" href="#contact">Book Spicky</a><a class="btn ghost" href="#heat">Pick your heat</a>
+  </header>
+
+  <section id="heat">
+    <h2>How much heat tonight?</h2>
+    <p class="lead">Tell Spicky how brave you feel and he’ll point you to a drink. Swap in your own signature cocktails below.</p>
+    <div class="heat">
+      <div class="levels" role="group" aria-label="Heat level">
+        <button aria-pressed="true" data-i="0">Mild</button>
+        <button aria-pressed="false" data-i="1">Medium</button>
+        <button aria-pressed="false" data-i="2">Hot</button>
+        <button aria-pressed="false" data-i="3">Spicky</button>
+      </div>
+      <div id="drink" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section id="hire">
+    <h2>Where you can book me</h2>
+    <div class="grid">
+      <div><h3>Private parties</h3><p>Birthdays, house parties and anniversaries, with a menu built around your guests.</p></div>
+      <div><h3>Weddings</h3><p>A bar that runs smoothly all night, from the first toast to the last call.</p></div>
+      <div><h3>Corporate events</h3><p>Launches, team nights and client evenings with a polished, friendly service.</p></div>
+      <div><h3>Custom cocktail menus</h3><p>Drinks designed for your theme, your taste and your budget.</p></div>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About Spicky</h2>
+    <p class="lead">I’m Victor Wycliffe, but behind the bar everyone calls me Spicky. I love making people feel looked after, and I put the same care into a simple highball as I do into a showpiece cocktail. Add your story, years behind the bar and the venues you’ve worked here.</p>
+  </section>
+
+  <section id="contact">
+    <h2>Book Spicky</h2>
+    <p class="lead">Tell me about your event and I’ll reply with availability and a quote.</p>
+    <form id="f">
+      <label>Your name<input name="name" required autocomplete="name"></label>
+      <label>Event type
+        <select name="type"><option>Private party</option><option>Wedding</option><option>Corporate event</option><option>Other</option></select>
+      </label>
+      <label>Date and number of guests<input name="when" placeholder="e.g. 12 December, 60 guests"></label>
+      <label>Details<textarea name="msg" rows="4"></textarea></label>
+      <button class="btn" type="submit">Send enquiry</button>
+    </form>
+  </section>
+
+  <footer>© <span id="y"></span> Victor “Spicky” Wycliffe. Please drink responsibly.</footer>
+</div>
+
+<script>
+var drinks=[
+ {n:"Garden Spritz",d:"Light, fresh and easy to sip.",h:"Heat: a gentle tingle of ginger"},
+ {n:"Smoky Margarita",d:"Tequila, lime and a rim with a little chili.",h:"Heat: warm"},
+ {n:"Fire Paloma",d:"Grapefruit, tequila and fresh jalapeño.",h:"Heat: proper kick"},
+ {n:"The Spicky",d:"My signature: bold, fiery and not for the faint-hearted.",h:"Heat: bring water"}
+];
+var box=document.getElementById('drink'),btns=document.querySelectorAll('.levels button');
+function show(i){
+  var x=drinks[i];
+  box.innerHTML='<h3></h3><p></p><p class="flame"></p>';
+  box.children[0].textContent=x.n;box.children[1].textContent=x.d;box.children[2].textContent=x.h;
+  btns.forEach(function(b,j){b.setAttribute('aria-pressed',j===i?'true':'false')});
+}
+btns.forEach(function(b){b.addEventListener('click',function(){show(+b.dataset.i)})});
+show(0);
+document.getElementById('y').textContent=new Date().getFullYear();
+document.getElementById('f').addEventListener('submit',function(e){
+  e.preventDefault();
+  var f=e.target,body='Name: '+f.name.value+'\nEvent: '+f.type.value+'\nDate/guests: '+f.when.value+'\n\n'+f.msg.value;
+  location.href='mailto:YOUR-spickyvicky4@gmail.com?subject='+encodeURIComponent('Event enquiry for Spicky')+'&body='+encodeURIComponent(body);
+});
+</script>
+</body>
+</html>
